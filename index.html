@@ -66,7 +66,7 @@
     <!-- <div class="container" id="main"> -->
         <div class="row">
             <h2 class="col-md-12 text-center">
-                <b>ReconFusion</b>: 3D Reconstruction with Diffusion Priors</br> 
+                <b>XScale-NVS</b>: Cross-Scale Novel View Synthesis with Hash Featurized Manifold</br> 
             </h2>
         </div>
         <div class="row text-center">
@@ -208,7 +208,7 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    3D reconstruction methods such as Neural Radiance Fields (NeRFs) excel at rendering photorealistic novel views of complex scenes. However, recovering a high-quality NeRF typically requires tens to hundreds of input images, resulting in a time-consuming capture process. We present ReconFusion to reconstruct real-world scenes using only a few photos. Our approach leverages a diffusion prior for novel view synthesis, trained on synthetic and multiview datasets, which regularizes a NeRF-based 3D reconstruction pipeline at novel camera poses beyond those captured by the set of input images. Our method synthesizes realistic geometry and texture in underconstrained regions while preserving the appearance of observed regions. We perform an extensive evaluation across various real-world datasets, including forward-facing and 360-degree scenes, demonstrating significant performance improvements over previous few-view NeRF reconstruction approaches.
+                    We propose XScale-NVS for high-fidelity cross-scale novel view synthesis of real-world large-scale scenes. Existing scene representations have limitations in capturing cross-scale details. Representations based on explicit surface suffer from discretization resolution or UV distortion, while implicit volumetric representations lack scalability for large scenes due to the dispersed weight distribution and surface ambiguity. In light of the above challenges, we introduce hash featurized manifold, a novel hash-based featurization coupled with a deferred neural rendering framework. This approach fully unlocks the expressivity of the representation by explicitly concentrating the hash entries on the 2D manifold, thus effectively representing highly detailed contents independent of the discretization resolution. We also introduce a novel dataset, namely GigaNVS, to benchmark cross-scale, high-resolution novel view synthesis of real-world large-scale scenes. Our method significantly outperforms competing baselines on various real-world scenes, yielding an average LPIPS that is 40% lower than prior state-of-the-art on the challenging GigaNVS benchmark.
                 </p>
             </div>
         </div>
