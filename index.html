@@ -75,61 +75,30 @@
             <div class="col-md-6 text-center">
                 <ul class="list-inline">
                     <li>
-                        <a href="https://www.cs.columbia.edu/~rundi/">
-                            Rundi Wu
+                        <a href="">
+                            Guangyu Wang
                         </a><sup>1</sup>*
                     </li>
                     <li>
-                        <a href="http://bmild.github.io/">
-                            Ben Mildenhall
-                        </a><sup>2</sup>*
+                        <a href="">
+                            Jinzhi Zhang
+                        </a><sup>1</sup>*
                     </li>
                     <li>
-                        <a href="https://henzler.github.io/">
-                            Philipp Henzler
+                        <a href="">
+                            Fan Wang
                         </a><sup>2</sup>
                     </li>
                     <li>
-                        <a href="https://keunhong.com/">
-                            Keunhong Park
-                        </a><sup>2</sup>
+                        <a href="https://rqhuang88.github.io/">
+                            Ruqi Huang
+                        </a><sup>1</sup>
                     </li>
                     <wbr>
                     <li>
-                        <a href="https://ruiqigao.github.io/">
-                            Ruiqi Gao
-                        </a><sup>3</sup>
-                    </li>
-                    <li>
-                        <a href="https://scholar.google.com/citations?user=_pKKv2QAAAAJ&hl=en/">
-                            Daniel Watson
-                        </a><sup>3</sup>
-                    </li>
-                    <li>
-                        <a href="https://pratulsrinivasan.github.io/">
-                            Pratul P. Srinivasan
-                        </a><sup>2</sup>
-                    </li>
-                    <li>
-                        <a href="https://dorverbin.github.io/">
-                            Dor Verbin
-                        </a><sup>2</sup>
-                    </li>
-                    <wbr>
-                    <li>
-                        <a href="https://jonbarron.info/">
-                            Jonathan T. Barron
-                        </a><sup>2</sup>
-                    </li>
-                    <li>
-                        <a href="https://poolio.github.io/">
-                            Ben Poole
-                        </a><sup>3</sup>
-                    </li>
-                    <li>
-                        <a href="https://holynski.org/">
-                            Aleksander Holynski
-                        </a><sup>2</sup>*
+                        <a href="http://www.luvision.net/">
+                            Lu Fang
+                        </a><sup>1</sup>
                     </li>
                     <!-- </br>Google -->
                 </ul>
@@ -137,18 +106,18 @@
 <div class="col-md-3">
     </div>
             <div class="col-md-12 text-center">
-                <sup>1</sup>Columbia University, &nbsp <sup>2</sup>Google Research, &nbsp <sup>3</sup>Google DeepMind
+                <sup>1</sup>Tsinghua University, &nbsp <sup>2</sup>Alibaba Group
 
             </div>
-            <div class="col-md-12 text-center">
+            <!-- <div class="col-md-12 text-center">
                 * equal contribution
-            </div> </div>
+            </div> </div> -->
 
 
         <div class="row text-center">
 					
 			     <span class="link-block">
-                <a href="https://arxiv.org/abs/2312.02981"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -163,7 +132,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <video id="teaser-video-ours" width="100%" autoplay loop muted controls>
-                  <source src="videos/teaser/wipe_4.mp4" type="video/mp4" />
+                  <source src="videos/teaser/final.mp4" type="video/mp4" />
                 </video>
 <!-- 
                 <video id="teaser-video-ours" width="100%" autoplay loop muted>
@@ -216,23 +185,24 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h3>
+                <!-- <h3>
 				  <b> <font color="#118ab2">Recon</font><font color="#ef486e">Fusion</font></b> = <font color="#118ab2">3D Reconstruction</font>  + <font color="#ef486e">Diffusion Prior</font>
-                </h3>
-                <image src="img/overview_combined.png" width=90% style="display: block; margin: auto;"></image>
+                </h3> -->
+                <image src="img/method.jpg" width=90% style="display: block; margin: auto;"></image>
                 <p class="text-justify">
-                    (a) We optimize a NeRF to minimize a reconstruction loss \(\mathcal{L}_\mathrm{recon}\) between renderings and a few input images, as well as a sample loss \(\mathcal{L}_\mathrm{sample}\) between a rendering from a random pose and an image predicted by a diffusion model for that pose. (b) To generate the sample image, we use a PixelNeRF-style model to fuse information from the input images and to render a predicted feature map corresponding to the sample view camera pose. (c) This feature map is concatenated with the noisy latent (computed from the current NeRF rendering at that pose) and is provided to a diffusion model, which additionally uses CLIP embeddings of the input images via cross-attention. The resulting decoded output sample is used to enforce an image-space loss on the corresponding NeRF rendering (\(\mathcal{L}_\mathrm{sample}\)).
+                    (a) UV-based featurizations tend to disorganize the feature distribution due to distortions in surface parametrization. (b) Existing 3D-surface-based featurizations fail to express the sub-primitive-scale intricate details given the limited discretization resolution. (c) Volumetric featurizations inevitably yield a dispersed weight distribution during volume rendering, where many multi-view inconsistent yet highly weighted samples ambiguate surface colour and deteriorate surface features with inconsistent colour gradient. (d) Our method leverages hash encoding to unlock the dependence of featuremetric resolution on discretization resolution, and utilizes rasterization to fully unleash the expressivity of volumetric hash encoding by propagating clean and multi-view consistent signals to surface features.
                 </p>
             </div>
         </div><br><br>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-		<h3> ReconFusion enables high-quality 3D reconstruction from few views</h3><br>
-                <video id="co3d-grid" width="100%" autoplay loop muted controls>
+		<h3> XScale-NVS enables high-quality cross-scale view synthesis of challenging real-world large-scale scenes</h3><br>
+                <!-- <video id="co3d-grid" width="100%" autoplay loop muted controls>
                   <source src="videos/results/co3d_3x5.mp4" type="video/mp4" />
-                </video>
+                </video> -->
+                <image src="img/pipeline.jpg" width=90% style="display: block; margin: auto;"></image>
                 <br>
-                    <p class="text-justify" style="text-align: center;">ReconFusion generalizes to everyday scenes: the same diffusion model prior is used for <b>all</b> reconstruction results.</p>
+                    <!-- <p class="text-justify" style="text-align: center;">ReconFusion generalizes to everyday scenes: the same diffusion model prior is used for <b>all</b> reconstruction results.</p> -->
 			</div>
         </div>
 
